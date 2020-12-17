@@ -70,10 +70,10 @@ WSGI_APPLICATION = 'Restify.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'postgres',
-        'USER': 'postgres',
+        'NAME': 'd57tgahnpiqkuj',
+        'USER': 'nyfxlzdnxvcvxg',
         'PASSWORD': 'postgres',
-        'HOST': 'localhost',
+        'HOST': 'ec2-54-158-190-214.compute-1.amazonaws.com',
         'POST': '5432',
     }
 }

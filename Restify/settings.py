@@ -1,12 +1,4 @@
 import os
-if os.name == 'nt':
-    VENV_BASE = os.environ['VIRTUAL_ENV']
-    os.environ['PATH'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo' + ';' + os.environ['PATH'])
-    os.environ['PROJ_LIB'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo\\data\\proj' + ';' + os.environ['PATH'])
-
-
-GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
-GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -131,3 +123,12 @@ REST_FRAMEWORK = {
         'api.backends.JWTAuthentication',
     ),
 }
+
+# if os.name == 'nt':
+#     VENV_BASE = os.environ['VIRTUAL_ENV']
+#     os.environ['PATH'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo' + ';' + os.environ['PATH'])
+#     os.environ['PROJ_LIB'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo\\data\\proj' + ';' + os.environ['PATH'])
+
+
+# GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
+# GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')

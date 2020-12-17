@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jjp#++=trmc(-ohf)lq!*eiquklho0w$_l)i%9vzpsaty%-dy6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["unicore-test.herokuapp.com"]
 
@@ -70,11 +70,11 @@ WSGI_APPLICATION = 'Restify.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'd57tgahnpiqkuj',
-        'USER': 'nyfxlzdnxvcvxg',
-        'PASSWORD': 'postgres',
-        'HOST': 'ec2-54-158-190-214.compute-1.amazonaws.com',
-        'POST': '5432',
+        'NAME': os.getenv('DB_NAME', 'postgres'),
+        'USER': os.getenv('DB_USER', 'postgres'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'postgres'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '5432'),,
     }
 }
 

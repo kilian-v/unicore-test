@@ -13,7 +13,7 @@ SECRET_KEY = 'jjp#++=trmc(-ohf)lq!*eiquklho0w$_l)i%9vzpsaty%-dy6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["unicore-test.herokuapp.com"]
 
 
 # Application definition

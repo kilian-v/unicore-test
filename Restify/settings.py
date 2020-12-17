@@ -13,7 +13,7 @@ SECRET_KEY = 'jjp#++=trmc(-ohf)lq!*eiquklho0w$_l)i%9vzpsaty%-dy6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["unicore-test.herokuapp.com"]
+ALLOWED_HOSTS = ["unicore-test.herokuapp.com", "localhost"]
 
 
 # Application definition
@@ -132,3 +132,16 @@ REST_FRAMEWORK = {
 
 # GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
 # GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn="https://23ae0f19f29640648f4bd47c0a140ad0@o493032.ingest.sentry.io/5561394",
+    integrations=[DjangoIntegration()],
+    traces_sample_rate=1.0,
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
